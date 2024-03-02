@@ -3,8 +3,8 @@ const { Schema } = mongoose;
 
 const toDoSchema = new Schema(
   {
-    task: {
-      type: STRING,
+    todo: {
+      type: String,
       required: true,
     },
   },

@@ -8,12 +8,28 @@
             </div>
         </div>
     </div>
-    <div class="col-md-8 offset-2 mt-5">
+    <div class="col-md-8 offset-md-2  mt-5">
         <div class="row">
-            <form action="/add/todo" class=" d-flex justify-content-center align-center">
-                <input type="text" name="todo" id="todo" class="me-2 form-control" placeholder="Enter Todo">
+            <form action="/add/todo" method="POST" class=" d-flex justify-content-center align-center">
+                <input type="text" name="todo" id="todo" class="me-2 form-control" placeholder="Enter Todo"/>
                 <button type="submit" class="btn btn-sm btn-dark"><i class="fas fa-plus fs-lg"></i></button>
             </form>
+            <ul class="list-group mt-5">
+                <% todo.forEach(todos=>{ %>
+                        <li class="list-group-item text-white bg-dark d-flex justify-content-between align-center my-1">
+
+                            <div class="d-flex align-self-center">
+                                <input type="checkbox" id="todo-checkbox-<%= todos._id %>" onchange="togglelinethrough(this)" class="me-3">
+                                <label for="todo-checkbox-<%= todos._id %>" id="todo-label">
+                                    <%= todos.todo %>
+                                </label>
+                            </div>
+
+                            <a href="/delete/todo/<%= todos._id %>" class="btn text-white  btn-small"><i class="fas fa-trash"></i></a>
+                        </li>
+                <% }) %>
+            </ul>
+
         </div>
     </div>
 </div>
