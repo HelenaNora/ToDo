@@ -9,8 +9,18 @@
         }
     }
 </script> -->
-<script>
+<!-- <script>
     function togglelinethrough(checkbox) {
+        const label = checkbox.nextElementSibling;
+        if (checkbox.checked) {
+            label.classList.add('line-through');
+        } else {
+            label.classList.remove('line-through');
+        }
+    }
+</script> -->
+<script>
+    function toggleLineThrough(event) {
         const label = checkbox.nextElementSibling;
         if (checkbox.checked) {
             label.classList.add('line-through');
